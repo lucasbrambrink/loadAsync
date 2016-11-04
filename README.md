@@ -6,7 +6,8 @@ javascript) is a robust strategy that works across all browsers.
 
 However, loading scripts asynchronously does not guarantee
 execution order. This library aims to bridge these two constraints:
-1) load as much javascript as possible concurrently
+
+1) load as much javascript concurrently as possible
 2) maintain execution order where necessary
 
 Include all `<script>` as `<div class="async-script">` (or any other
@@ -24,7 +25,7 @@ Example:
        }
    </style>
 
- * * * Instead of <script> tags, include them as hidden <div w/ data-attributes * * * *
+ * * * Instead of <script> tags, include them as hidden <div> w/ data-attributes * * * *
 
    <div class="async-script"
         data-key="baseLibrary"
@@ -33,7 +34,7 @@ Example:
    <div class="async-script"
         data-key="specificJavascript"
         data-source="/scripts/pages/ui-components.js"
-        data-depends-on="baseLibrary">
+        data-depends-on="baseLibrary"> ** await baseLibrary ****
    <div>
 ```
 
