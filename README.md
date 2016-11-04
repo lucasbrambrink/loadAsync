@@ -1,6 +1,6 @@
-# Load Asynchronous Javascript
+# Ordered Asynchronous Javascript
 
-Loading javascript asynchronously improves performance. Dynamically
+Loading javascript asynchronously improves page performance. Dynamically
 adding `<script>` tags into the DOM after page-load (with
 javascript) is a robust strategy that works across all browsers. 
 
@@ -36,3 +36,6 @@ Example:
         data-depends-on="baseLibrary">
    <div>
 ```
+
+Simply load the minified library within the DOM (end of `<body>`
+is suggested).
