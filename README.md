@@ -1,14 +1,19 @@
-# Ordered Asynchronous Javascript
+# asyncLoad.js
 
-Loading javascript asynchronously improves page performance. Dynamically
-adding `<script>` tags into the DOM after page-load (with
-javascript) is a robust strategy that works across all browsers. 
+This utility aims to maximize concurrent javascript loading
+and execution while maintaining load order. 
+
+Loading javascript asynchronously improves page performance (often
+dramatically). Dynamically adding `<script>` tags into the DOM after
+page-load (with javascript) is a robust strategy that works across all
+browsers. 
 
 However, loading scripts asynchronously does not guarantee
 execution order. This library aims to bridge these two constraints:
 
 1) load as much javascript concurrently as possible
-2) maintain execution order where necessary
+
+2) await dependency scripts before code execution
 
 Include all `<script>` as `<div class="async-script">` (or any other
 hidden element) with `data-key`, `data-source`, and `data-depends-on`
