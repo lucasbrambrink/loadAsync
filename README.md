@@ -1,13 +1,20 @@
 # Load Asynchronous Javascript
 
 Loading javascript asynchronously improves performance. Dynamically
-adding `<script>` tags on the page using vanilla javascript is
-considered good practice as it works across browsers. 
+adding `<script>` tags into the DOM after page-load (with
+javascript) is a robust strategy that works across all browsers. 
 
-Instead, include them as `<div class="async-script">` (or any other
-hidden element) with `data-key`, `data-source`, and `data-depends-on` attributes. By
-assigning each script a name/key, other scripts can target it as their
-dependency. This maintains execution consistency where necessary.
+However, loading scripts asynchronously does not guarantee
+execution order. This library aims to bridge these two constraints:
+1) load as much javascript as possible concurrently
+2) maintain execution order where necessary
+
+Include all `<script>` as `<div class="async-script">` (or any other
+hidden element) with `data-key`, `data-source`, and `data-depends-on`
+attributes. By assigning each script a name/key, other scripts can
+target it as their dependency. Each script broadcasts its load event
+in its `data-key` namespace, which other scripts can listen to
+in `data-depends-on` value.
 
 Example:
 ```
