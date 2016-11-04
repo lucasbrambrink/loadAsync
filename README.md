@@ -35,11 +35,11 @@ Example:
     </style>
 
     * * * * * 
-        Instead of <script> tags, include them 
-        as hidden <div>'s w/ data-attributes 
-            -key
-            -source
-            -depends-on (optional)
+    Instead of <script> tags, include them 
+    as hidden <div>'s w/ data-attributes 
+        -key
+        -source
+        -depends-on (optional)
     * * * * *
     
     <div class="async-script"
@@ -49,8 +49,8 @@ Example:
     <div class="async-script"
         data-key="specificJavascript"
         data-source="/scripts/pages/ui-components.js"
-        data-depends-on="baseLibrary"> ** await baseLibrary ****
-   <div>
+        data-depends-on="baseLibrary"> *await baseLibrary*
+    <div>
 ```
 
 Simply load the minified library within the DOM (end of `<body>`
