@@ -1,7 +1,7 @@
 # asyncLoad.js
 
-This library is designed to maximize page load performance
-by removing javascript from the primary rendering process. 
+This library is designed to maximize page performance
+by removing javascript from the initial page load. 
 It loads `<script>` resources
 asynchronously (and thereby leverages concurrency in the browser)
 but still guarantees load order
@@ -15,8 +15,8 @@ strategy that works across all modern browsers.
 However, loading scripts asynchronously does not guarantee
 execution order. This library aims to bridge these two constraints:
 
-1. load as much javascript concurrently as possible
-2. defer javascript with js dependencies until those have loaded
+1. load as many `<script>`s concurrently as possible
+2. defer `<script>`s with js dependencies until those have loaded
 
 ### Implementation
 Include all `<script>` as `<div class="async-script">` (or any other
