@@ -34,12 +34,14 @@ Example:
        }
     </style>
 
-    <!-- Instead of <script> tags, include them 
-         as hidden <div>'s w/ data-attributes 
-            -key
-            -source
-            -depends-on (optional) --!>
-
+    * * * * * 
+    Instead of <script> tags, include them 
+    as hidden <div>'s w/ data-attributes 
+        -key
+        -source
+        -depends-on (optional) --!>
+    * * * * *
+    
     <div class="async-script"
         data-key="baseLibrary"
         data-source="/scripts/useful/library.js">
