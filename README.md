@@ -2,21 +2,20 @@
 
 This utility is designed to maximize page load performance
 by minimizing the javascript footprint. It loads `<script>` resources
-asynchronously (and thereby leverage concurrency in the browser)
-but guarantees load order
+asynchronously (and thereby leverages concurrency in the browser)
+but still guarantees load order
 (in cases where one resource depends on another).
 
-Loading javascript asynchronously improves page performance (often
-dramatically). Dynamically adding `<script>` tags into the DOM after
-page-load (with javascript) is a robust strategy that works across all
-browsers. 
+It is well established that loading javascript asynchronously
+improves page performance. Dynamically adding `<script>` tags
+into the DOM after page-load (with javascript) is a robust
+strategy that works across all modern browsers. 
 
 However, loading scripts asynchronously does not guarantee
 execution order. This library aims to bridge these two constraints:
 
-1) load as much javascript concurrently as possible
-
-2) await dependency scripts before code execution
+1. load as much javascript concurrently as possible
+2. await dependency scripts before code execution
 
 Include all `<script>` as `<div class="async-script">` (or any other
 hidden element) with `data-key`, `data-source`, and `data-depends-on`
