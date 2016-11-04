@@ -1,12 +1,17 @@
 /*  Maximize concurrent javascript loading
-*   by loading all javascript asynchronously
-*   but maintain dependency relationships
+*   by loading as much javascript in parallel
+*   but maintain order of execution if required
+*
+*
 *
 *   <style>
 *       .async-script {
 *           display: none;
 *       }
 *   </style>
+*
+* * * * Instead of <script> tags, include them as hidden <div w/ data-attributes * * * *
+*
 *   <div class="async-script"
 *        data-key="baseLibrary"
 *        data-source="/scripts/useful/library.js">
