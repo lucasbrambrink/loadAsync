@@ -1,7 +1,10 @@
 # asyncLoad.js
 
-This utility aims to maximize concurrent javascript loading
-and execution while maintaining load order. 
+This utility is designed to maximize page load performance
+by minimizing the javascript footprint. It loads `<script>` resources
+asynchronously (and thereby leverage concurrency in the browser)
+but guarantees load order
+(in cases where one resource depends on another).
 
 Loading javascript asynchronously improves page performance (often
 dramatically). Dynamically adding `<script>` tags into the DOM after
