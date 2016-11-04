@@ -38,8 +38,7 @@ Example:
          as hidden <div>'s w/ data-attributes 
             -key
             -source
-            -depends-on)
-    --!>
+            -depends-on (optional) --!>
 
     <div class="async-script"
         data-key="baseLibrary"
