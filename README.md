@@ -35,7 +35,7 @@ Example:
    </style>
 
  * * * Instead of <script> tags, include them 
- as hidden <div>'s w/ data-attributes * * * *
+       as hidden <div>'s w/ data-attributes   * * * *
 
    <div class="async-script"
         data-key="baseLibrary"
