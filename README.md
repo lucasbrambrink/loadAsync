@@ -1,4 +1,4 @@
-# asyncLoad.js
+# loadAsync.js
 
 This library is designed to maximize page performance
 by removing javascript from the initial page load. 
@@ -28,20 +28,24 @@ in `data-depends-on` value.
 
 Example:
 ```
-   <style>
+    <style>
        div.async-script {
            display: none;
        }
-   </style>
+    </style>
 
- * * * Instead of <script> tags, include them 
-       as hidden <div>'s w/ data-attributes   * * * *
+    <!-- Instead of <script> tags, include them 
+         as hidden <div>'s w/ data-attributes 
+            -key
+            -source
+            -depends-on)
+    --!>
 
-   <div class="async-script"
+    <div class="async-script"
         data-key="baseLibrary"
         data-source="/scripts/useful/library.js">
-   </div>
-   <div class="async-script"
+    </div>
+    <div class="async-script"
         data-key="specificJavascript"
         data-source="/scripts/pages/ui-components.js"
         data-depends-on="baseLibrary"> ** await baseLibrary ****
