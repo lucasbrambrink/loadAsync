@@ -1,7 +1,8 @@
 # asyncLoad.js
 
-This utility is designed to maximize page load performance
-by minimizing the javascript footprint. It loads `<script>` resources
+This library is designed to maximize page load performance
+by removing javascript from the primary rendering process. 
+It loads `<script>` resources
 asynchronously (and thereby leverages concurrency in the browser)
 but still guarantees load order
 (in cases where one resource depends on another).
@@ -15,8 +16,9 @@ However, loading scripts asynchronously does not guarantee
 execution order. This library aims to bridge these two constraints:
 
 1. load as much javascript concurrently as possible
-2. await dependency scripts before code execution
+2. defer javascript with js dependencies until those have loaded
 
+### Implementation
 Include all `<script>` as `<div class="async-script">` (or any other
 hidden element) with `data-key`, `data-source`, and `data-depends-on`
 attributes. By assigning each script a name/key, other scripts can
@@ -32,7 +34,7 @@ Example:
        }
    </style>
 
- * * * Instead of <script> tags, include them as hidden <div> w/ data-attributes * * * *
+ * * * Instead of <script> tags, include them as hidden <div>'s w/ data-attributes * * * *
 
    <div class="async-script"
         data-key="baseLibrary"
