@@ -1,11 +1,10 @@
-# loadAsync.js
+# orderedAsync.js
 
-This library is designed to maximize page performance
-by removing javascript from the initial page load. 
-It loads `<script>` resources
+This library is loads `<script>` resources
 asynchronously (and thereby leverages concurrency in the browser)
 but still guarantees load order
-(in cases where one resource depends on another).
+(in cases where one resource depends on another). It is designed to maximize page performance
+by removing javascript from the initial page load. 
 
 It is well established that loading javascript asynchronously
 improves page performance. Dynamically adding `<script>` tags
